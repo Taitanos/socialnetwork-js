@@ -1,17 +1,12 @@
 import React from "react";
 import s from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 function Profile() {
     return (
         <div>
-            <div>
-                <img
-                    src={'https://t3.ftcdn.net/jpg/01/72/84/00/360_F_172840094_eF1Cx8vBfuGBHcSqImum8af0iX2YrUUM.jpg'}/>
-            </div>
-            <div>
-                ava + description
-            </div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     )
