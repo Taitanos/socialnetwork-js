@@ -4,12 +4,12 @@ import Post from "./Post/Post";
 
 function MyPosts() {
 
-    let postsData = [
+    let posts = [
         {id: 1, message: "Hi, it's my first post", likesCounter:15},
         {id: 2, message: "Hi, how old are you?", likesCounter:15},
     ]
 
-    let postsElement = postsData.map(p => <Post message={p.message} likesCount={p.likesCounter} id={p.id}/>)
+    let postsElement = posts.map(p => <Post message={p.message} likesCount={p.likesCounter} id={p.id}/>)
 
     return (
         <div className={s.postsBlock}>
