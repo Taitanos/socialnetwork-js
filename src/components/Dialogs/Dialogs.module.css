@@ -7,20 +7,6 @@
     padding: 10px;
 }
 
-.dialog a {
-    color: #296161;
-    text-decoration: none;
-}
-
-.dialog a.active {
-    color: #ce1a6e;
-    font-weight: bold;
-}
-
 .messages {
     padding: 15px;
-}
-
-.message {
-
 }
