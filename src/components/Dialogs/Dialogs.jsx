@@ -17,6 +17,13 @@ function Dialogs(props) {
             <div className={s.messages}>
                 {messagesElement}
             </div>
+{/*            Сделать самостоятельно текст ареа и кнопку для написание диалога
+            <div>
+                <textarea ref={newPostElement}></textarea>
+            </div>
+            <div>
+                <button onClick={addPost}>Add post</button>
+            </div>*/}
         </div>
     )
 }
