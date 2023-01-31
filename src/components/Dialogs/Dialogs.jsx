@@ -6,8 +6,8 @@ import Message from "./Message/Message";
 
 function Dialogs(props) {
 
-    let dialogElement = props.dialogData.map(d => <DialogItem name={d.name} id={d.id}/>)
-    let messagesElement = props.messagesData.map(m => <Message message={m.message} id={m.id}/>)
+    let dialogElement = props.state.dialogData.map(d => <DialogItem name={d.name} id={d.id}/>)
+    let messagesElement = props.state.messagesData.map(m => <Message message={m.message} id={m.id}/>)
 
     return (
         <div className={s.dialogs}>
@@ -17,6 +17,13 @@ function Dialogs(props) {
             <div className={s.messages}>
                 {messagesElement}
             </div>
+{/*            Сделать самостоятельно текст ареа и кнопку для написание диалога
+            <div>
+                <textarea ref={newPostElement}></textarea>
+            </div>
+            <div>
+                <button onClick={addPost}>Add post</button>
+            </div>*/}
         </div>
     )
 }
