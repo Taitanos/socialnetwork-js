@@ -1,5 +1,25 @@
+.contentMessage {
+    display: flex;
+}
 
+.avaMessage img {
+    width: 60px;
+    border-radius: 25px;
+    margin: 25px 0px 25px 25px;
+}
+
+.triangleTopRight {
+    width: 0;
+    height: 0;
+    border-top: 15px solid white;
+    border-left: 15px solid transparent;
+    margin: 25px 0px 25px 0px;
+}
 
 .message {
-
+    width: 250px;
+    background-color: white;
+    padding: 15px;
+    margin: 25px 25px 25px 0px;
+    border-radius: 0px 15px;
 }

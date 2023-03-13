@@ -1,7 +1,18 @@
 .nav {
+    display: grid;
     grid-area: n;
-    background-color: aqua;
+    grid-template-rows: 250px 150px;
+    grid-gap: 15px;
+}
+
+.navContent {
     padding: 20px;
+    background-color: aqua;
+}
+
+.navFriends {
+    padding: 20px;
+    background-color: aqua;
 }
 
 .item a {
@@ -12,4 +23,10 @@
 .item a.activeLink {
     color: #ce1a6e;
     font-weight: bold;
+}
+
+.friends img {
+    width: 50px;
+    border-radius: 25px;
+    padding: 2px;
 }

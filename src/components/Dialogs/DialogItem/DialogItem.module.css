@@ -1,3 +1,8 @@
+.dialog {
+    margin: 0px 15px;
+    padding: 10px 0px;
+}
+
 .dialog a {
     color: #296161;
     text-decoration: none;
