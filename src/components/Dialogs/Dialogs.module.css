@@ -11,3 +11,7 @@
 .messages {
     padding: 15px;
 }
+.textArea {
+    width: 750px;
+    height: 100px;
+}
