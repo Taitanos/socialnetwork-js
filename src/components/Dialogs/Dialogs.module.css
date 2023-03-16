@@ -6,10 +6,12 @@
 
 .dialogsItem {
     padding: 25px;
-    background-color: aquamarine;
 }
 
 .messages {
     padding: 15px;
-    background-color: aquamarine;
+}
+.textArea {
+    width: 750px;
+    height: 100px;
 }

@@ -9,6 +9,13 @@ function Dialogs(props) {
     let dialogElement = props.state.dialogData.map(d => <DialogItem name={d.name} id={d.id}/>)
     let messagesElement = props.state.messagesData.map(m => <Message message={m.message} id={m.id}/>)
 
+    let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text);
+    }
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
@@ -16,14 +23,13 @@ function Dialogs(props) {
             </div>
             <div className={s.messages}>
                 {messagesElement}
+                <div>
+                    <textarea className={s.textArea} ref={newMessageElement}/>
+                </div>
+                <div>
+                    <button onClick={addMessage}>Add message</button>
+                </div>
             </div>
-{/*            Сделать самостоятельно текст ареа и кнопку для написание диалога
-            <div>
-                <textarea ref={newPostElement}></textarea>
-            </div>
-            <div>
-                <button onClick={addPost}>Add post</button>
-            </div>*/}
         </div>
     )
 }
