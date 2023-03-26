@@ -5,3 +5,8 @@
 .posts {
     margin-top: 10px;
 }
+
+.textArea {
+    width: 650px;
+    height: 140px;
+}
