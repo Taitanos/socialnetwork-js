@@ -12,8 +12,12 @@ function Dialogs(props) {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
+        props.addMessage();
+    }
+
+    let onMessageChange = () => {
         let text = newMessageElement.current.value;
-        alert(text);
+        props.updateNewMessageText(text);
     }
 
     return (
@@ -24,7 +28,8 @@ function Dialogs(props) {
             <div className={s.messages}>
                 {messagesElement}
                 <div>
-                    <textarea className={s.textArea} ref={newMessageElement}/>
+                    <textarea className={s.textArea} onChange={onMessageChange}
+                              ref={newMessageElement} value={props.dialogsPage.newMessageText}/>
                 </div>
                 <div>
                     <button onClick={addMessage}>Add message</button>
