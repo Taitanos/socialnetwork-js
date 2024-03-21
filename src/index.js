@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 
-export let rerenderEntireTree = (state) => {
+export let rerenderEntireTree = () => {
     ReactDOM.render(
-        <App state={state} dispatch={store.dispatch.bind(store)}/>
+        <App store={store}/>
         , document.getElementById('root')
     );
 }
