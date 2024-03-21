@@ -25,7 +25,7 @@ let store = {
                 {id: 4, message: 'Yo'},
                 {id: 5, message: 'Yo'},
             ],
-            newMessageText: 'That\'s good idea'
+            newMessageText: ''
         },
     },
     _callSubscriber() {

@@ -1,11 +1,10 @@
 import React from 'react';
-import MyPosts from '../MyPosts';
-import {addPostActionCreator, updateNewPostActionCreator} from '../../../../redux/profileReducer';
+import MyPosts from './MyPosts';
+import {addPostActionCreator, updateNewPostActionCreator} from '../../../redux/profileReducer';
 
 function MyPostsContainer(props) {
 
     let state = props.store.getState()
-
 
     let addPost = () => {
         props.store.dispatch(addPostActionCreator());
