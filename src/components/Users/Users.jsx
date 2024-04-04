@@ -1,51 +1,14 @@
 import React from 'react';
 import s from './Users.module.css';
+import userPhoto from '../../assets/images/photoUsers.jpg'
+import axios from "axios";
 
 const Users = (props) => {
 
     if (props.users.length === 0) {
-        props.setUsers( [
-            {
-                id: 1,
-                photoUrl: 'https://avatarzo.ru/wp-content/uploads/squid-game-anime.jpg',
-                followed: true,
-                fullName: 'Alexey',
-                status: 'I am Backend developer',
-                location: {city: 'Saint Petersburg', country: 'Russia'}
-            },
-            {
-                id: 2,
-                photoUrl: 'https://avatarzo.ru/wp-content/uploads/squid-game-anime.jpg',
-                followed: false,
-                fullName: 'Tatyana',
-                status: 'I am cool and i know it',
-                location: {city: 'Saint Petersburg', country: 'Russia'}
-            },
-            {
-                id: 3,
-                photoUrl: 'https://avatarzo.ru/wp-content/uploads/squid-game-anime.jpg',
-                followed: false,
-                fullName: 'Sergey',
-                status: 'I am cool and i know it',
-                location: {city: 'Saint Petersburg', country: 'Russia'}
-            },
-            {
-                id: 4,
-                photoUrl: 'https://avatarzo.ru/wp-content/uploads/squid-game-anime.jpg',
-                followed: true,
-                fullName: 'Alina',
-                status: 'I am streamer',
-                location: {city: 'Sochi', country: 'Russia'}
-            },
-            {
-                id: 5,
-                photoUrl: 'https://avatarzo.ru/wp-content/uploads/squid-game-anime.jpg',
-                followed: true,
-                fullName: 'Ponteley',
-                status: 'I am cute cat and i know it',
-                location: {city: 'Saint Petersburg', country: 'Russia'}
-            },
-        ])
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            props.setUsers(response.data.items)
+        })
     }
 
     return (
@@ -55,7 +18,7 @@ const Users = (props) => {
                     <div key={u.id}>
                     <span>
                         <div>
-                            <img className={s.userPhoto} src={u.photoUrl} alt={'photo user'}/>
+                            <img className={s.userPhoto} src={u.photos.small !== null ? u.photos.small : userPhoto} alt={'photo'}/>
                         </div>
                         {u.followed
                             ? <button onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
@@ -63,12 +26,12 @@ const Users = (props) => {
                     </span>
                     <span>
                         <span>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
                         </span>
                         <span>
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
                         </span>
                     </span>
                     </div>)
