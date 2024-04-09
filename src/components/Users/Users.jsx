@@ -3,11 +3,9 @@ import s from "./Users.module.css";
 import userPhoto from "../../assets/images/photoUsers.jpg";
 import axios from "axios";
 
-class Users extends React.Component{
+class Users extends React.Component {
 
-    constructor(props) {
-        super(props);
-
+    componentDidMount() {
         axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
             this.props.setUsers(response.data.items)
         })
@@ -21,11 +19,16 @@ class Users extends React.Component{
                         <div key={u.id}>
                     <span>
                         <div>
-                            <img className={s.userPhoto} src={u.photos.small !== null ? u.photos.small : userPhoto} alt={'photo'}/>
+                            <img className={s.userPhoto} src={u.photos.small !== null ? u.photos.small : userPhoto}
+                                 alt={'photo'}/>
                         </div>
                         {u.followed
-                            ? <button onClick={() => {this.props.unfollow(u.id)}}>Unfollow</button>
-                            : <button onClick={() => {this.props.follow(u.id)}}>Follow</button>}
+                            ? <button onClick={() => {
+                                this.props.unfollow(u.id)
+                            }}>Unfollow</button>
+                            : <button onClick={() => {
+                                this.props.follow(u.id)
+                            }}>Follow</button>}
                     </span>
                             <span>
                         <span>
