@@ -3,3 +3,11 @@
     height: 100px;
     border-radius: 15px;
 }
+
+.selectedPage {
+    font-weight: bold;
+}
+
+span:hover {
+    cursor: pointer;
+}
