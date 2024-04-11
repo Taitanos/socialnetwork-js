@@ -1,6 +1,6 @@
 const initialState = {
     users: [],
-    pageSize: 5,
+    pageSize: 10,
     currentPage: 1,
     totalUsersCount: 0,
 };
